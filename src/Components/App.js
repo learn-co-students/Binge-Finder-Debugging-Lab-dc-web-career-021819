@@ -27,8 +27,7 @@ class App extends Component {
   }
 
   handleFilter = (e) => {
-    debugger
-    e.target.value === "No Filter" ? this.setState({ filterRating:"" }) : this.setState({ filterRating: e.target.value})
+    e.target.value === "No Filter" ? this.setState({ filterByRating:"" }) : this.setState({ filterByRating: e.target.value})
   }
 
   selectShow = (show) => {
@@ -41,9 +40,9 @@ class App extends Component {
   }
 
   displayShows = () => {
-    if (this.state.filterByRating){
+    if (!!this.state.filterByRating){
       return this.state.shows.filter((s)=> {
-        return s.rating.average >= this.state.filterByRating
+        return s.rating.average >= parseInt(this.state.filterByRating)
       })
     } else {
       return this.state.shows
