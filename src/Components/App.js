@@ -27,6 +27,7 @@ class App extends Component {
   }
 
   handleFilter = (e) => {
+    debugger
     e.target.value === "No Filter" ? this.setState({ filterRating:"" }) : this.setState({ filterRating: e.target.value})
   }
 

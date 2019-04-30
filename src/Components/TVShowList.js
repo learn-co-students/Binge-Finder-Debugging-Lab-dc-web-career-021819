@@ -8,7 +8,7 @@ class TVShowList extends Component {
     if (!!this.props.searchTerm){
       return this.props.shows.map((s) => {
         if (s.name.toLowerCase().includes(this.props.searchTerm)){
-          (<TVShow show={s} key={s.id} selectShow={this.props.selectShow}/> )
+          return (<TVShow show={s} key={s.id} selectShow={this.props.selectShow}/> )
         }
       })
     }
